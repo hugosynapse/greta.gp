@@ -236,7 +236,7 @@ absolute_dist <- function(X, X_prime, lengthscales = NULL) {
 # helper function to pull out slices of tensors and add final dim if dropped
 tf_slice <- function(X, dims) {
   
-  X <- tf$gather(X, dims, axis = -1L)
+  X <- tf$gather_nd(X, dims, axis = -1L)
   
   if (length(dims) == 1)
     X <- tf$expand_dims(X, axis = -1L)
